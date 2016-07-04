@@ -3,7 +3,7 @@
 This is the entry point of bibjeeves.
 '''
 
-from tkinter import Tk
+import tkinter as Tk
 
 from bibjeeves.config import update_cache
 from bibjeeves.gui import App
@@ -14,11 +14,14 @@ def main():
     '''
     This is bibjeeves main function.
     '''
-    root = Tk()
+    # produce the app object
+    root = Tk.Tk()
     app = App(root)
 
+    # start the main loop
     root.mainloop()
 
+    # if the cache has changed, write it back to disk.
     update_cache()
 
 

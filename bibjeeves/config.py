@@ -7,13 +7,15 @@ import os
 import json
 
 
+HOME = os.path.expanduser('~')
+
 CONFIGFILES = [
-    '~/.config/bibjeeves/bibjeeves.conf',
-    '~/.bibjeeves.conf',
+    HOME + '/.config/bibjeeves/bibjeeves.conf',
+    HOME + '/.bibjeeves.conf',
     '/etc/bibjeeves.conf',
 ]
 
-CACHEFILE = '~/.cache/bibjeeves/bibjeeves.cache'
+CACHEFILE = HOME + '/.cache/bibjeeves/bibjeeves.cache'
 
 
 def _read_config(configfiles):

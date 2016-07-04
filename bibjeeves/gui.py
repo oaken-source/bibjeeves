@@ -47,12 +47,16 @@ class App(object):
 
         left.bind('<Configure>', self.on_horizontal_resize)
         top.bind('<Configure>', self.on_vertical_resize)
+        master.bind('<Control-q>', self.quit)
 
     def on_horizontal_resize(self, event):
         CACHE['panes']['width'] = event.width
 
     def on_vertical_resize(self, event):
         CACHE['panes']['height'] = event.height
+
+    def quit(self, event):
+        event.widget.quit()
 
 
 class MenuBar(object):
