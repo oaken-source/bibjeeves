@@ -12,6 +12,7 @@ setup(
 
     packages=[
         'bibjeeves',
+        'bibjeeves.gui',
     ],
 
     entry_points={

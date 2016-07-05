@@ -3,11 +3,8 @@
 This is the entry point of bibjeeves.
 '''
 
-import tkinter as Tk
-
 from bibjeeves.config import update_cache
-from bibjeeves.gui import App
-from bibjeeves.providers import CiteSeerxProvider
+from bibjeeves.gui.app import App
 
 
 def main():
@@ -15,11 +12,10 @@ def main():
     This is bibjeeves main function.
     '''
     # produce the app object
-    root = Tk.Tk()
-    app = App(root)
+    app = App()
 
-    # start the main loop
-    root.mainloop()
+    # start and block until the gui terminates
+    app.run()
 
     # if the cache has changed, write it back to disk.
     update_cache()
