@@ -9,12 +9,18 @@ from bibjeeves.models import Document
 
 
 class AbstractProvider(object):
+    '''
+    the provider interface - to be extended by actual providers
+    '''
 
     def query(self, text=None, title=None, author=None):
         raise NotImplementedError('this method must be implemented in the provider')
 
 
 class CiteSeerxProvider(AbstractProvider):
+    '''
+    this provider queries CiteSeerx for the requested documents
+    '''
 
     def query(self, text=None, title=None, author=None):
         args = []

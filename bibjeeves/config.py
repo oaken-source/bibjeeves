@@ -24,9 +24,9 @@ def _read_config(configfiles):
     '''
     for configfile in configfiles:
         try:
-            with open(configfile) as f:
-                return json.loads(f.read())
-        except:
+            with open(configfile) as config:
+                return json.loads(config.read())
+        except IOError:
             pass
 
     return dict()
@@ -37,9 +37,9 @@ def _read_cache(cachefile):
     read the cache from the cachefile, if it exists
     '''
     try:
-        with open(cachefile) as f:
-            return json.loads(f.read())
-    except:
+        with open(cachefile) as cache:
+            return json.loads(cache.read())
+    except IOError:
         pass
 
     return dict()
@@ -50,8 +50,8 @@ def update_cache():
     this function is called from main before exit to write a changed cach back
     '''
     os.makedirs(os.path.dirname(CACHEFILE), exist_ok=True)
-    with open(CACHEFILE, "w") as f:
-        f.write(json.dumps(CACHE))
+    with open(CACHEFILE, "w") as cache:
+        cache.write(json.dumps(CACHE))
 
 
 CONFIG = _read_config(CONFIGFILES)
