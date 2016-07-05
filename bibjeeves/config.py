@@ -19,6 +19,9 @@ CACHEFILE = HOME + '/.cache/bibjeeves/bibjeeves.cache'
 
 
 def _read_config(configfiles):
+    '''
+    read the config from the config files in order, use the first one you find
+    '''
     for configfile in configfiles:
         try:
             with open(configfile) as f:
@@ -30,6 +33,9 @@ def _read_config(configfiles):
 
 
 def _read_cache(cachefile):
+    '''
+    read the cache from the cachefile, if it exists
+    '''
     try:
         with open(cachefile) as f:
             return json.loads(f.read())
@@ -40,6 +46,9 @@ def _read_cache(cachefile):
 
 
 def update_cache():
+    '''
+    this function is called from main before exit to write a changed cach back
+    '''
     os.makedirs(os.path.dirname(CACHEFILE), exist_ok=True)
     with open(CACHEFILE, "w") as f:
         f.write(json.dumps(CACHE))
