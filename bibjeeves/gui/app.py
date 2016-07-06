@@ -5,7 +5,7 @@ This module provides the graphical user interface of bibjeeves.
 
 import tkinter as tk
 
-from bibjeeves.gui.widgets import MenuBar, ThreePaneWindow
+from bibjeeves.gui.widgets import MenuBar, ThreePaneWindow, Listbox, TreeCanvas, Infobox
 
 
 class App(object):
@@ -21,10 +21,19 @@ class App(object):
         self.root = tk.Tk()
 
         # place widgets
-        self.menubar = MenuBar(self.root)
-        self.panes = ThreePaneWindow(self.root)
+        menubar = MenuBar(self.root)
+        panes = ThreePaneWindow(self.root)
 
-        # global key bindings
+        listbox = Listbox(panes.left)
+        treecanvas = TreeCanvas(panes.top)
+        infobox = Infobox(panes.bottom)
+
+        self._setup_keybindings()
+
+    def _setup_keybindings(self):
+        '''
+        bind relevant keys to functions
+        '''
         self.root.bind('<Control-q>', lambda _: self.root.quit())
 
     def run(self):

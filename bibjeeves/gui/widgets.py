@@ -4,6 +4,7 @@ This module provides the widgets used in the bibjeeves gui.
 '''
 
 import tkinter as tk
+import tkinter.ttk as ttk
 
 from bibjeeves.config import CACHE
 
@@ -99,3 +100,47 @@ class ThreePaneWindow(object):
         '''
         CACHE['layout']['panes_vsplit'] = event.height
 
+
+class Listbox(object):
+    '''
+    hold the list of currently opened documents
+    '''
+
+    def __init__(self, master):
+        '''
+        constructor - create the widget and fill it with items from the cache
+        '''
+        scrollbar = ttk.Scrollbar(master)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+        listbox = tk.Listbox(master)
+        listbox.pack(fill=tk.BOTH, expand=True)
+
+        listbox.config(yscrollcommand=scrollbar.set)
+        scrollbar.config(command=listbox.yview)
+
+
+class TreeCanvas(object):
+    '''
+    render the citation tree of the current document
+    '''
+
+    def __init__(self, master):
+        '''
+        constructor - create the widget
+        '''
+        canvas = tk.Canvas(master)
+        canvas.pack(fill=tk.BOTH, expand=True)
+
+
+class Infobox(object):
+    '''
+    render information about the currently selected document
+    '''
+
+    def __init__(self, master):
+        '''
+        constructor - create the widget
+        '''
+        text = tk.Text(master)
+        text.pack(fill=tk.BOTH, expand=True)
