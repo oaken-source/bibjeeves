@@ -21,12 +21,13 @@ class App(object):
         self.root = tk.Tk()
 
         # place widgets
-        menubar = MenuBar(self.root)
-        panes = ThreePaneWindow(self.root)
+        menubar = MenuBar(self, self.root)
 
-        listbox = Listbox(panes.left)
-        treecanvas = TreeCanvas(panes.top)
-        infobox = Infobox(panes.bottom)
+        panes = ThreePaneWindow(self, self.root)
+
+        listbox = Listbox(self, panes.left)
+        treecanvas = TreeCanvas(self, panes.top)
+        infobox = Infobox(self, panes.bottom)
 
         self._setup_keybindings()
 
@@ -41,3 +42,12 @@ class App(object):
         start the tk main loop and start processing events
         '''
         self.root.mainloop()
+
+    def on_import_document(self):
+        raise NotImplementedError('todo')
+
+    def on_close_document(self):
+        raise NotImplementedError('todo')
+
+    def on_find(self):
+        raise NotImplementedError('todo')
