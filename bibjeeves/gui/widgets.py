@@ -108,6 +108,12 @@ class Listbox(tk.Listbox):
         self.pack(fill=tk.BOTH, expand=True)
         self.config(yscrollcommand=scrollbar.set)
 
+    def add_document(self, document):
+        '''
+        insert a new top level document to the list
+        '''
+        self.insert(tk.END, document)
+
 
 class TreeCanvas(tk.Canvas):
     '''

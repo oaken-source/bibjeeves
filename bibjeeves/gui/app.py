@@ -4,8 +4,10 @@ This module provides the graphical user interface of bibjeeves.
 '''
 
 import tkinter as tk
+import tkinter.messagebox
 
 from bibjeeves.gui.widgets import MenuBar, ThreePaneWindow, Listbox, TreeCanvas, Infobox
+from bibjeeves.gui.dialogs import DocumentImportDialog
 
 
 class App(object):
@@ -25,9 +27,9 @@ class App(object):
 
         panes = ThreePaneWindow(self, self.root)
 
-        listbox = Listbox(self, panes.left)
-        treecanvas = TreeCanvas(self, panes.top)
-        infobox = Infobox(self, panes.bottom)
+        self.listbox = Listbox(self, panes.left)
+        self.treecanvas = TreeCanvas(self, panes.top)
+        self.infobox = Infobox(self, panes.bottom)
 
         self._setup_keybindings()
 
@@ -44,10 +46,21 @@ class App(object):
         self.root.mainloop()
 
     def on_import_document(self):
-        raise NotImplementedError('todo')
+        '''
+        invoked when import document is clicked
+        '''
+        document = DocumentImportDialog(self.root).ask_document()
+        if document is not None:
+            self.listbox.add_document(document)
 
     def on_close_document(self):
+        '''
+        invoked when close document is clicked
+        '''
         raise NotImplementedError('todo')
 
     def on_find(self):
+        '''
+        invoked when find is clicked
+        '''
         raise NotImplementedError('todo')
