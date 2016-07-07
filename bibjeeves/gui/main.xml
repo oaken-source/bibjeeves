@@ -1,0 +1,41 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tkinter.Tk>
+
+  <bibjeeves.gui.widgets.CacheAwarePanedWindow
+      name="horizontal_paned_window"
+      sashrelief="raised"
+      pack.fill="both"
+      pack.expand="yes" >
+
+    <tkinter.Frame>
+
+      <tkinter.ttk.Scrollbar
+          name="document_listbox_scrollbar"
+          pack.side="right"
+          pack.fill="y" />
+
+      <bibjeeves.gui.widgets.DocumentListbox
+          name="document_listbox"
+          pack.fill="both"
+          pack.expand="yes"/>
+
+    </tkinter.Frame>
+
+    <bibjeeves.gui.widgets.CacheAwarePanedWindow
+        name="vertical_paned_window"
+        sashrelief="raised"
+        orient="vertical">
+
+      <bibjeeves.gui.widgets.DocumentCanvas
+          name="document_canvas" />
+
+      <tkinter.Text
+          name="document_infobox" />
+
+      </bibjeeves.gui.widgets.CacheAwarePanedWindow>
+
+  </bibjeeves.gui.widgets.CacheAwarePanedWindow>
+
+</tkinter.Tk>

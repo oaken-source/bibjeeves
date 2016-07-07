@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tkinter.Menu>
+
+  <tkinter.Menu
+      cascade.label="file"
+      tearoff="No">
+
+    <tkinter.Menu.command
+        label="import document" />
+    <tkinter.Menu.command
+        label="close document" />
+
+    <tkinter.Menu.separator />
+
+    <tkinter.Menu.command
+        label="quit" />
+
+  </tkinter.Menu>
+
+  <tkinter.Menu
+      cascade.label="edit"
+      tearoff="No">
+
+    <tkinter.Menu.command
+        label="find" />
+
+  </tkinter.Menu>
+
+</tkinter.Menu>

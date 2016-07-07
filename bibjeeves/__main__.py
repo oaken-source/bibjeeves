@@ -4,7 +4,7 @@ This is the entry point of bibjeeves.
 '''
 
 from bibjeeves.config import update_cache
-from bibjeeves.gui.app import App
+from bibjeeves.gui.app import BibjeevesApp
 
 
 def main():
@@ -12,7 +12,7 @@ def main():
     This is bibjeeves main function.
     '''
     # produce the app object
-    app = App()
+    app = BibjeevesApp()
 
     # start and block until the gui terminates
     app.run()
