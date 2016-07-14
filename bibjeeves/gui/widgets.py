@@ -20,12 +20,6 @@ class DocumentListbox(tk.Listbox):
         '''
         super(DocumentListbox, self).__init__(master, **kwargs)
 
-        #scrollbar = ttk.Scrollbar(master, command=self.yview)
-        #scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-
-        #self.pack(fill=tk.BOTH, expand=True)
-        #self.config(yscrollcommand=scrollbar.set)
-
     def add_document(self, document):
         '''
         insert a new top level document to the list
@@ -43,8 +37,6 @@ class DocumentCanvas(tk.Canvas):
         constructor - create the widget
         '''
         super(DocumentCanvas, self).__init__(master, **kwargs)
-
-        #self.pack(fill=tk.BOTH, expand=True)
 
 
 class CacheAwarePanedWindow(tk.PanedWindow):

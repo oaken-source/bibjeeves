@@ -25,6 +25,10 @@ class BibjeevesApp(TkApp):
         # setup keybindings
         self.bind('<Control-q>', lambda _: self.on_quit())
 
+        # bind listbox scroll
+        self['document_listbox'].config(yscrollcommand=self['document_listbox_scrollbar'].set)
+        self['document_listbox_scrollbar'].config(command=self['document_listbox'].yview)
+
     def on_import_document(self):
         '''
         invoked when import document is clicked
