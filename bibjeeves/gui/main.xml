@@ -10,14 +10,17 @@
         tearoff="No">
 
       <tkinter.Menu.add_command
-          label="import document" />
+	  label="import document"
+	  command="on_import_document" />
       <tkinter.Menu.add_command
-          label="close document" />
+          label="close document"
+	  command="on_close_document" />
 
       <tkinter.Menu.add_separator />
 
       <tkinter.Menu.add_command
-          label="quit" />
+          label="quit"
+	  command="on_quit" />
 
     </tkinter.Menu>
 
