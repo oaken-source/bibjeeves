@@ -3,6 +3,8 @@
 This module provides the graphical user interface of bibjeeves.
 '''
 
+from os.path import join, dirname
+
 from tkapp import TkApp
 
 
@@ -18,11 +20,10 @@ class BibjeevesApp(TkApp):
         super(BibjeevesApp, self).__init__()
 
         self.set_layout(join(dirname(__file__), 'main.xml'))
+        self.materialize()
 
         # setup keybindings
-        self.root.bind('<Control-q>', lambda _: self.root.quit())
-
-        self.materialize()
+        self.bind('<Control-q>', lambda _: self.on_quit())
 
     def on_import_document(self):
         '''
@@ -46,4 +47,4 @@ class BibjeevesApp(TkApp):
         '''
         invoked when quit is clicked
         '''
-        self.root.quit()
+        self.quit()
