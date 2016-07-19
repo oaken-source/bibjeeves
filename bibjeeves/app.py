@@ -19,7 +19,7 @@ class BibjeevesApp(TkApp):
         '''
         super(BibjeevesApp, self).__init__()
 
-        self.set_layout(join(dirname(__file__), 'main.xml'))
+        self.set_layout(join(dirname(__file__), 'gui/main.xml'))
         self.materialize()
 
         # setup keybindings

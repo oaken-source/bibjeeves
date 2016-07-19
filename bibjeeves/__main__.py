@@ -4,7 +4,7 @@ This is the entry point of bibjeeves.
 '''
 
 from bibjeeves.config import update_cache
-from bibjeeves.gui.app import BibjeevesApp
+from bibjeeves.app import BibjeevesApp
 
 
 def main():
