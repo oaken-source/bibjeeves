@@ -1,0 +1,22 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tkinter.Toplevel>
+
+  <tkinter.Frame
+      pack.padx="10"
+      pack.pady="5" >
+
+    <tkinter.Frame
+        pack.pady="5" >
+
+      <tkinter.Label
+          text="text" />
+
+      <tkinter.Entry />
+
+    </tkinter.Frame>
+
+  </tkinter.Frame>
+
+</tkinter.Toplevel>

@@ -7,6 +7,8 @@ from os.path import join, dirname
 
 from tkapp import TkApp
 
+from bibjeeves.dialogs import DocumentImportDialog
+
 
 class BibjeevesApp(TkApp):
     '''
@@ -33,7 +35,8 @@ class BibjeevesApp(TkApp):
         '''
         invoked when import document is clicked
         '''
-        raise NotImplementedError('todo')
+        dialog = DocumentImportDialog()
+        result = self.spawn_dialog(dialog)
 
     def on_close_document(self):
         '''
